@@ -1,0 +1,229 @@
+/* *{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: #548687;
+    text-align: center;
+}
+
+.container{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 2rem rgba(29, 0, 0, 0.323);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #ffffc7
+}
+
+#reset-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+
+#new-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+
+#msg{
+    color: #ffffc7;
+    font-size: 5vmin;
+}
+
+.msg-conatiner{
+    height: 100vin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+
+// ke winner oita ager dekha jachilo khelar agei tar jonno height deyoa holo //
+.hide{
+    display: none;
+} */
+/* General styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #e6e6fa);
+    color: #4b0082;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #4b0082;
+    text-shadow: 3px 3px 6px rgba(75, 0, 130, 0.5);
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Game container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-top: 20%;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+}
+
+/* Game boxes */
+.box {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #4b0082;
+    border-radius: 10px;
+    background-color: #e6e6fa;
+    font-size: 2.5rem;
+    color: #4b0082;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.box:hover {
+    background-color: #d8bfd8;
+    transform: scale(1.1);
+}
+
+/* Message container */
+.msg-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 40px;
+    background: #efe8ef;
+    border: 2px solid #4b0082;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(75, 0, 130, 0.4);
+    width: 300px;
+    max-width: 90%;
+}
+
+.msg-container.hide {
+    display: none;
+}
+
+#msg {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4b0082;
+}
+
+/* Buttons */
+button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #4b0082;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #9370db;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #6a5acd;
+    transform: translateY(0);
+}
+
+#reset-btn {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#new-btn {
+    margin: 15px auto;
+    display: block;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .game {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 8px;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+    }
+
+    .msg-container {
+        padding: 20px;
+        width: 250px;
+    }
+
+    #msg {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
